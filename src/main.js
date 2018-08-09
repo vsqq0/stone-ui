@@ -3,7 +3,11 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import './registerServiceWorker'
-
+import { get, post, put, del } from './Utils/request';
+Vue.prototype.get = get;
+Vue.prototype.post = post;
+Vue.prototype.post = put;
+Vue.prototype.post = del;
 Vue.config.productionTip = false
 
 new Vue({
