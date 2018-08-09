@@ -9,7 +9,7 @@ export default new Router({
       path: "/",
       name: "home",
       component: () =>
-      import("./views/home")
+      import(/* webpackChunkName: "home" */ "./views/home")
     },
     {
       path: "/list",
