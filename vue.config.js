@@ -25,7 +25,7 @@ module.exports = {
         asset: '[path].gz[query]',
         algorithm: 'gzip',
         test: new RegExp('\\.(' + ['js', 'css'].join('|') + ')$'),
-        threshold: 0,
+        threshold: 10240,
         minRatio: 0.8
       })
     ];
