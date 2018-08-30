@@ -1,12 +1,11 @@
 // import axios from 'axios';
 
 export default class ajax {
-  static a(patha) {
-    alert(4);
+  static goto() {
+    console.log(this)
+    return this.$router.push('/a');
   }
-  static req(patha) {
-    return resolve => require([patha], resolve);
-  }
+
   /**
    *  设置cookie
    * @param {string} key
@@ -47,7 +46,7 @@ export default class ajax {
    * @param {function} hander 时间到了后的回调
    */
   static setTimeOut(hander, time) {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       setTimeout(() => {
         hander();
         resolve();

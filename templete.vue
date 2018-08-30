@@ -1,17 +1,17 @@
 <template>
-  <div class="foot">
-    foot
+  <div class="">
   </div>
 </template>
 
 <script>
 export default {
-  name: 'foot',
+  props: {},
   data() {
     return {};
-  }
+  },
+  created() {}
 };
 </script>
 
-<style scoped>
+<style lang='less' scoped>
 </style>

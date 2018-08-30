@@ -1,36 +1,36 @@
 <template>
-  <div class="vux-demo">
-    <Head></Head>
-    <a> index</a>
-    <Foot></Foot>
+  <div class="home">
+    <div class="beijing wc">
+      <img src="../../assets/beijing.jpg" alt="">
+    </div>
+    <div class="block-9"></div>
+    <!-- <div class="foot pd"></div> -->
   </div>
 </template>
 
 <script>
-import { Head, Foot } from '../../components/index.js';
-
 export default {
-  components: {
-    Head,
-    Foot
-  },
+  components: {},
   data() {
-    return {
-      msg: 'Hello World!'
-    };
+    return {};
   },
   async created() {
-    // console.log(await $.get('flagStore'));
+    
   }
 };
 </script>
 
-<style>
-.vux-demo {
-  text-align: center;
-}
-.logo {
-  width: 100px;
-  height: 100px;
+<style lang='less' scoped>
+.home {
+  .beijing {
+    img {
+      opacity: 0.8;
+      width: 100%;
+      height: 500px;
+    }
+  }
+  .foot{
+    background: black;
+  }
 }
 </style>

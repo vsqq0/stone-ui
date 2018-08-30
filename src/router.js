@@ -7,13 +7,25 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
       component: () => import(/* webpackChunkName: "home" */ './views/home')
     },
     {
+      path: '/highLight',
+      component: () => import(/* webpackChunkName: "home" */ './views/highLight')
+    },
+    {
       path: '/list',
-      name: 'list',
-      component: () => import(/* webpackChunkName: "list" */ './views/list')
+      component: () => import(/* webpackChunkName: "list" */ './views/list'),
+      children:[
+        {
+          path:'model',
+          component:() => import(/* webpackChunkName: "list" */ './views/list/components/model.vue')
+        },
+        {
+          path:'',
+          component:() => import(/* webpackChunkName: "list" */ './views/list/components/start.vue')
+        }
+      ]
     }
   ]
 });

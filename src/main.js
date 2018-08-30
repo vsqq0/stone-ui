@@ -1,17 +1,22 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
-import store from './store'
-import './registerServiceWorker'
+import Vue from 'vue';
+import App from './App.vue';
+import router from './router';
+import store from './store';
+import './registerServiceWorker';
 import { get, post, put, del } from './Utils/request';
+import {MsgModel} from '../index.js'
+import highlight from './Utils/directives/highLight.js'
+
 Vue.prototype.get = get;
 Vue.prototype.post = post;
 Vue.prototype.post = put;
 Vue.prototype.post = del;
-Vue.config.productionTip = false
+Vue.prototype.alert = MsgModel;
+
+Vue.config.productionTip = false;
 
 new Vue({
   router,
   store,
   render: h => h(App)
-}).$mount('#app')
+}).$mount('#app');

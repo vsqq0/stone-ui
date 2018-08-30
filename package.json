@@ -1,7 +1,7 @@
 {
-  "name": "vue-project",
-  "version": "0.1.0",
-  "private": true,
+  "name": "stone-ui",
+  "license": "MIT",
+  "version": "0.1.5",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -10,6 +10,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "register-service-worker": "^1.0.0",
+    "stone-ui": "^0.1.5",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
