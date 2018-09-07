@@ -5,7 +5,7 @@ import store from './store';
 import './registerServiceWorker';
 import { get, post, put, del } from './Utils/request';
 import {MsgModel} from '../index.js'
-import highlight from './Utils/directives/highLight.js'
+
 
 Vue.prototype.get = get;
 Vue.prototype.post = post;

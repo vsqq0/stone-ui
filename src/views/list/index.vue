@@ -1,56 +1,76 @@
 <template>
   <div class="list left">
-    <div style="width:20%;" class="f16 lists ac up">
-      <a class="pd">开始</a>
-      <a class="pd">弹窗</a>
-      <a class="pd">进度条</a>
+    <div style="width:20%;">
+      <Menu :data="menu"></Menu>
     </div>
-    <div class="component-detail">
-      <router-view/>
+    <div class="component-detail flex1">
+      <keep-alive>
+        <router-view :apiCol="this.apiCol" />
+      </keep-alive>
+      <div style="height:20px;"></div>
     </div>
   </div>
 </template>
 
 <script>
-import Vue from 'vue';
-
-import { Head, Model } from '../../../index.js';
-import hljs from 'highlight.js';
-import 'highlight.js/styles/github.css'; //样式文件
-
+import { Menu } from '@/../';
 export default {
-  components: { Head, Model },
+  components: { Menu },
   data() {
     return {
-      show: false,
-      html: `
-        var express = require('express');
-        var app = express();
-        app.get('/', function (req, res) {
-          res.send('http://yunkus.com');
-        });
-        var server = app.listen(3000, function () {
-        var host = server.address().address;
-        var port = server.address().port;
-        console.log('云库网', host, port);
-        });`
+      apiCol: [
+        {
+          title: '参数',
+          key: 'param'
+        },
+        {
+          title: '说明',
+          key: 'detail'
+        },
+        {
+          title: '类型',
+          key: 'type'
+        },
+        {
+          title: '默认值',
+          key: 'default'
+        }
+      ],
+      menu: [
+        {
+          menu: '开始',
+          click: () => this.$router.push('/list')
+        },
+        {
+          menu: '按钮（button）',
+          click: () => this.$router.push('/list/button')
+        },
+        {
+          menu: '弹窗（model）',
+          click: () => this.$router.push('/list/model')
+        },
+        {
+          menu: '进度条（progress）',
+          click: () => {}
+        },
+        {
+          menu: '菜单（menu）',
+          click: () => {}
+        },
+        {
+          menu: '分页（pagination）',
+          click: () => {}
+        },
+        {
+          menu: '代码块高亮（highlight）',
+          click: () => this.$router.push('/list/highlight')
+        }
+      ]
     };
   },
-  methods: {
-    modifyCode() {
-      setTimeout(() => {
-        let blocks = document.querySelectorAll('pre code');
-        console.log(blocks);
-        blocks.forEach(block => {
-          hljs.highlightBlock(block);
-        });
-      }, 1000);
-    }
-  },
+  methods: {},
   watch: {},
-  created() {
-    this.modifyCode();
-  },
+  created() {},
   mounted() {}
 };
 </script>
@@ -60,7 +80,6 @@ export default {
   .title {
     font-weight: bold;
   }
-
   .msg {
   }
 }

@@ -10,20 +10,32 @@ export default new Router({
       component: () => import(/* webpackChunkName: "home" */ './views/home')
     },
     {
-      path: '/highLight',
-      component: () => import(/* webpackChunkName: "home" */ './views/highLight')
+      path: '/jsx',
+      component: () => import(/* webpackChunkName: "home" */ './views/jsx')
     },
     {
       path: '/list',
       component: () => import(/* webpackChunkName: "list" */ './views/list'),
-      children:[
+      children: [
         {
-          path:'model',
-          component:() => import(/* webpackChunkName: "list" */ './views/list/components/model.vue')
+          path: 'model',
+          component: () =>
+            import(/* webpackChunkName: "model" */ './views/list/components/model')
         },
         {
-          path:'',
-          component:() => import(/* webpackChunkName: "list" */ './views/list/components/start.vue')
+          path: '',
+          component: () =>
+            import(/* webpackChunkName: "start" */ './views/list/components/start')
+        },
+        {
+          path: 'highlight',
+          component: () =>
+            import(/* webpackChunkName: "highlight" */ './views/list/components/highlight')
+        },
+        {
+          path: 'button',
+          component: () =>
+            import(/* webpackChunkName: "button" */ './views/list/components/button')
         }
       ]
     }

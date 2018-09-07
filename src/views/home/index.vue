@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <!-- <div>vue的jsx组件</div> -->
     <div class="beijing wc">
       <img src="../../assets/beijing.jpg" alt="">
     </div>
