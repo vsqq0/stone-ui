@@ -1,22 +1,29 @@
-<template>
-  <div class="model">
-    <div v-show="show" class="myModel wc hc up">
-      <div class="model ac">
-        <div class="model-head">head</div>
-        <div class="model-msg pd-lr pd-b px1-b">
-          <slot></slot>
-        </div>
-        <div v-for="(i,key) in foot" :key="key" class="model-button bt ad hc f16">
-          <div @click="i.click" class="flex1 pd-tb a">{{i.text}}</div>
+<script>
+export default {
+  render() {
+    return (
+      <div class="model-ui">
+        <div v-show={this.show} class="myModel wc hc up">
+          <div class="model ac">
+            <div class="model-head">head</div>
+            <div class="model-msg pd-lr pd-b px1-b">
+              <slot />
+              {this.$slots.default}
+            </div>
+            {this.foot.map(val => {
+              return (
+                <div class="model-button bt ad hc f16">
+                  <div onClick={val.click} class="flex1 pd-tb a">
+                    {val.text}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</template>
-
-<script>
-// import '../../global.css'
-export default {
+    );
+  },
   props: {
     show: {
       type: Boolean
@@ -25,7 +32,7 @@ export default {
       type: Array,
       default: () => [
         {
-          text: '确定',
+          text: "确定",
           click() {}
         }
       ]
@@ -34,12 +41,14 @@ export default {
   data() {
     return {};
   },
-  created() {}
+  created() {},
+  mounted() {
+  }
 };
 </script>
 
 <style lang='less' scoped>
-.model {
+.model-ui {
   .myModel {
     top: 0;
     left: 0;
@@ -51,10 +60,15 @@ export default {
     // opacity:0.4;
     // filter:alpha(opacity=40);
     .model {
-      max-width: 350px;
+      max-width: 420px;
       width: 80%;
       background: white;
       border-radius: 4px;
+      .model-head {
+        text-align: left;
+        padding-top: 10px;
+        padding-left: 10px;
+      }
       .model-msg {
       }
       .model-button {
