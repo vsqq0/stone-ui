@@ -36,6 +36,11 @@ export default new Router({
           path: 'button',
           component: () =>
             import(/* webpackChunkName: "button" */ './views/list/components/button')
+        },
+        {
+          path: 'slider',
+          component: () =>
+            import(/* webpackChunkName: "button" */ './views/list/components/slider')
         }
       ]
     }

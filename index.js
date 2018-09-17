@@ -6,10 +6,11 @@ const Table = () => import(/* webpackChunkName: "SU-table" */'./src/components/t
 const Block = () => import(/* webpackChunkName: "SU-block" */'./src/components/block');
 const CodeShow = () => import(/* webpackChunkName: "SU-codeShow" */'./src/components/codeShow');
 const Menu = () => import(/* webpackChunkName: "SU-menu" */'./src/components/menu');
+const Slider = () => import(/* webpackChunkName: "SU-menu" */'./src/components/slider');
 
 import MsgModel from './src/components/msgModel';
 
-export { 
+export {
   Model,
   MsgModel,
   HighLight,
@@ -17,5 +18,6 @@ export {
   Table,
   Block,
   CodeShow,
-  Menu
+  Menu, 
+  Slider
 };
